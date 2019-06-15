@@ -1,12 +1,11 @@
 import React from 'react';
 import ProductList from '../Products/ProductList';
 
-export class Home extends React.Component {
+export class Kontakt extends React.Component {
     render() {
         return (
             <div>
-                <h1>Product list</h1>
-                <ProductList/>
+                <h1>Kontakt</h1>
             </div>
         );
     }
