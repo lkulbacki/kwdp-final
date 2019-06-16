@@ -10,7 +10,7 @@ class BasketPage extends React.Component {
             <div>
                 <h1>Witamy w koszyku!</h1>
                 <BasketList/>
-                <div>Suma wydatków: {this.props.total.toFixed(2)}PLN</div>
+                <div>Suma wydatków: {this.props.total}PLN</div>
             </div>
         )
     }

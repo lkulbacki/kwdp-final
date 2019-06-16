@@ -4,6 +4,10 @@ import {Link} from "react-router-dom";
 
 class BasketItem extends React.Component {
 
+    handleDeleteItem = (id) => {
+        this.props.removeFromCart(id);
+    };
+
     render() {
         const product = this.props.product;
         console.log(this.props);
@@ -14,7 +18,7 @@ class BasketItem extends React.Component {
                 <p className='desc'>{product.desc}</p>
                 <div><div className='icon'>-</div><p className='quantity'>Quantity: {product.quantity}</p><div className='icon'>+</div></div>
                 <img className='imageBox' src={product.picture} alt={product.name}/>
-                <div className='icon' onClick={this.props.removeFromCart}>REMOVE</div>
+                <div className='icon' onClick={() => {this.handleDeleteItem(product.id)}}>REMOVE</div>
             </div>
         )
     }

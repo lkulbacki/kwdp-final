@@ -38,8 +38,11 @@ const cartReducer = (state = initState, action) => {
             }
         case REMOVE_FROM_CART:
             console.log(REMOVE_FROM_CART);
-            let addedItemsWithoutSelected = state.addedItems.filter(item => item.id !== action.id);
-            return {...state, addedItems: addedItemsWithoutSelected}
+            let itemToRemove = state.addedItems.find(item=> action.id === item.id);
+            let remainingItems = state.addedItems.filter(item => item.id !== action.id);
+            let newTotal = state.total - (itemToRemove.price * itemToRemove.quantity);
+
+            return {...state, addedItems: remainingItems, total: newTotal.toFixed(2)};
         default:
             return state;
     }
