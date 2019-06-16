@@ -1,5 +1,4 @@
 import React from 'react';
-import ProductList from '../Products/ProductList';
 
 export class Regulamin extends React.Component {
     render() {
