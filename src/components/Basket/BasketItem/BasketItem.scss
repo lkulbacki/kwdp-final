@@ -1,0 +1,33 @@
+.BasketItem {
+  background-color: indianred;
+}
+
+.ProductPrice {
+  color: darkolivegreen;
+}
+
+.imageBox {
+  max-width: 400px;
+  max-height: 300px;
+}
+
+.icon {
+  text-align: center;
+  font-size: 20px;
+  line-height: 40px;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  background-color: white;
+  color: #282c34;
+  font-weight: 700;
+  cursor: pointer;
+  &:hover {
+    background-color: aliceblue;
+  }
+}
+
+.quantity {
+  display: inline-block;
+  margin: 5px;
+}

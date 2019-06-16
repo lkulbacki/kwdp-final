@@ -10,3 +10,15 @@
   max-width: 400px;
   max-height: 300px;
 }
+
+.btn {
+  cursor: pointer;
+  border: 1px solid #87221f;
+  width: 300px;
+  text-align: center;
+  padding: 4px;
+  &:hover {
+    color: aqua;
+    background-color: #282c34;
+  }
+}

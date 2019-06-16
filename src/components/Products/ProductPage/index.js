@@ -1,21 +1,31 @@
 import React from 'react';
 import './ProductPage.scss';
-import ProductData from '../../../products.json';
+import {connect} from 'react-redux';
 
-export class ProductPage extends React.Component {
+import ProductData from '../../../products.json';
+import {setProductBySlug} from "../../../actions/product-actions";
+
+class ProductPage extends React.Component {
     constructor(props) {
         super(props);
+        console.log(props);
+        console.log(this.props);
         this.match = props.match;
-        this.product = this.getProduct(ProductData.products, this.match.params.slug)[0];
-
+        this.product = this.getProduct(ProductData, this.match.params.slug);
+        // this.product = props.currentItem;
+        props.setProductBySlug(this.match.params.slug);
     }
 
     getProduct(productArray, slug) {
-        return productArray.filter(function(product) {
-            return product.slug === slug;
-        });
+        return productArray.products.find(product => product.slug === slug);
     }
 
+    // // SAME AS ABOVE, not-arrow syntax
+    // getProduct(productArray, slug) {
+    //     return productArray.products.find(function (product) {
+    //         return product.slug === slug;
+    //     });
+    // }
     render() {
         const product = this.product;
         return (
@@ -29,4 +39,19 @@ export class ProductPage extends React.Component {
     }
 }
 
-export default ProductPage;
+const mapDispatchToProps = (dispatch) => {
+    return {
+        setProductBySlug: (slug) => {
+            dispatch(setProductBySlug(slug))
+        }
+    }
+};
+
+const mapStateToProps = (state) => {
+    return {
+        currentItem: state.productReducer.currentItem
+    }
+};
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProductPage);

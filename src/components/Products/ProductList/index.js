@@ -2,11 +2,11 @@ import React from 'react';
 import {connect} from 'react-redux';
 import './ProductList.scss';
 import ProductBox from '../ProductBox';
+import {addToCart} from '../../../actions/cart-actions'
 
 class ProductList extends React.Component {
     constructor(props) {
         super(props);
-        console.log(props);
     }
 
     render() {
@@ -14,7 +14,7 @@ class ProductList extends React.Component {
             {
                 this.props.items.map(product => {
                     return (
-                        <ProductBox key={product.id} product={product}/>
+                        <ProductBox key={product.id} product={product} addToCart={this.props.addToCart}/>
                     );
                 })
             }
@@ -28,4 +28,12 @@ const mapStateToProps = (state) => {
     }
 };
 
-export default connect(mapStateToProps)(ProductList);
+const mapDispatchToProps = (dispatch) => {
+    return {
+        addToCart: (id) => {
+            dispatch(addToCart(id))
+        }
+    }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProductList);
