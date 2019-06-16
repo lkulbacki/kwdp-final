@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 
 class ProductBox extends React.Component {
 
-    handleClick = (id) => {
+    handleAddToCart = (id) => {
         this.props.addToCart(id);
     };
 
@@ -17,7 +17,7 @@ class ProductBox extends React.Component {
                 <p className='desc'>{product.desc}</p>
                 <img className='imageBox' src={product.picture} alt={product.name}/>
                 <div className='btn' onClick={() => {
-                    this.handleClick(product.id)
+                    this.handleAddToCart(product.id)
                 }}>Do koszyka
                 </div>
             </div>

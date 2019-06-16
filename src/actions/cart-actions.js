@@ -1,7 +1,7 @@
-export const ADD_QUANTITY = 'ADD_QUANTITY';
-export const REMOVE_QUANTITY = 'REMOVE_QUANTITY';
 export const ADD_TO_CART = 'ADD_TO_CART';
 export const REMOVE_FROM_CART = 'REMOVE_FROM_CART';
+export const INCREASE_QUANTITY = 'INCREASE_QUANTITY';
+export const DECREASE_QUANTITY = 'DECREASE_QUANTITY';
 
 export function addToCart(id) {
     return {
@@ -17,16 +17,16 @@ export function removeFromCart(id) {
     }
 }
 
-export function addQuantity(id) {
+export function increaseQuantity(id) {
     return {
-        type: ADD_QUANTITY,
+        type: INCREASE_QUANTITY,
         id
     }
 }
 
-export function removeQuantity(id) {
+export function decreaseQuantity(id) {
     return {
-        type: REMOVE_QUANTITY,
+        type: DECREASE_QUANTITY,
         id
     }
 }
