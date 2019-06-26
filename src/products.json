@@ -44,6 +44,50 @@
       "special": "Ostatnia sztuka!",
       "desc": "Praesent dolor lacus, ultricies dictum tellus et, cursus faucibus nisi. Donec eleifend magna sem, eu faucibus ex auctor quis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Praesent erat lectus, convallis vitae lacus a, efficitur congue leo. Morbi faucibus sapien non iaculis eleifend. Sed tempor nisl quis sodales viverra. Donec at tincidunt purus. Donec a tellus risus.",
       "picture": "/images/products/nokia-n9.jpg"
+    },    {
+      "id": "75c04040-d286-4bc1-b6e3-7bbc0b71dcd3",
+      "name": "LaSportiva buty trekking",
+      "slug": "lasportiva-buty-trekking",
+      "price": "495.50",
+      "special": "",
+      "desc": "Praesent placerat enim nec mauris elementum laoreet. Nunc congue non eros nec sollicitudin. Etiam vel nisl eu justo luctus consectetur. Etiam ut orci non tortor pharetra gravida. Sed sit amet sapien at est tempus euismod. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Integer ut rutrum ligula. Ut sed est lacus.",
+      "picture": "/images/products/lasportiva_shoes.png"
+    },
+    {
+      "id": "ee8041a4-1aae-48fe-9cef-481c269b569b",
+      "name": "Apple TV",
+      "slug": "apple-tv",
+      "price": "849.00",
+      "special": "",
+      "desc": "Pellentesque fringilla lacinia gravida. Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin aliquam felis eget eleifend accumsan. Suspendisse venenatis magna in mattis sodales. Mauris interdum libero eu enim tincidunt malesuada. Nunc dignissim urna ipsum, eu ultricies nunc consequat sed.",
+      "picture": "/images/products/apple_tv.jpg"
+    },
+    {
+      "id": "19eaf300-4b94-45bd-a9b5-f08589006651",
+      "name": "Wytwornica dymu",
+      "slug": "wytwornica-dymu",
+      "price": "129.99",
+      "special": "",
+      "desc": "Suspendisse quis gravida tellus, ut sagittis sapien. Phasellus euismod leo ac neque tempor euismod. Etiam interdum nisi in odio aliquam, vitae mattis diam finibus. Aenean viverra, ligula nec malesuada vehicula, nunc dolor varius quam, quis fringilla massa ante in ex. Ut lobortis pharetra mauris, vel blandit felis lacinia nec. Fusce pulvinar fermentum malesuada. Praesent eleifend vehicula dapibus.",
+      "picture": "/images/products/wytwornica_dymu.jpg"
+    },
+    {
+      "id": "16e61596-4389-4aa0-97da-0c641ffbe0e8",
+      "name": "Wentylator Dyson AM06",
+      "slug": "wentylator-dyson-am06",
+      "price": "1299.99",
+      "special": "Idealny na lato!",
+      "desc": "Vivamus augue urna, pellentesque vel justo eget, mollis porta mauris. Aliquam congue mollis libero, sed ultricies enim bibendum sit amet. Sed et leo non nisi ultrices congue vel non felis. Suspendisse tincidunt id est in porttitor. Proin rutrum purus sed lacus molestie imperdiet. Nunc id mauris quis neque egestas bibendum eu eget eros.",
+      "picture": "/images/products/wentylator_dyson_am06.jpg"
+    },
+    {
+      "id": "f21a6f49-b188-4ae3-aa84-feb2e73e8487",
+      "name": "Śpiwór puchowy Aura",
+      "slug": "spiwor-puchowy-aura",
+      "price": "449.99",
+      "special": "",
+      "desc": "Praesent dolor lacus, ultricies dictum tellus et, cursus faucibus nisi. Donec eleifend magna sem, eu faucibus ex auctor quis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Praesent erat lectus, convallis vitae lacus a, efficitur congue leo. Morbi faucibus sapien non iaculis eleifend. Sed tempor nisl quis sodales viverra. Donec at tincidunt purus. Donec a tellus risus.",
+      "picture": "/images/products/spiwor_puchowy_aura.jpg"
     }
   ]
 }
