@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import './ProductList.scss';
 import ProductBox from '../ProductBox';
 import {addToCart} from '../../../actions/cart-actions'
-import {sortByNameAZ, sortByNameZA} from '../../../actions/product-actions'
+import {sortByNameAZ, sortByNameZA, sortByPriceAsc, sortByPriceDesc} from '../../../actions/product-actions'
 import {changePage} from '../../../actions/pagination-actions'
 import Pagination from "../../Pagination";
 
@@ -20,10 +20,20 @@ class ProductList extends React.Component {
         this.props.sortByNameZA();
     }
 
+    handleSortByPriceAsc() {
+        this.props.sortByPriceAsc();
+    }
+
+    handleSortByPriceDesc() {
+        this.props.sortByPriceDesc();
+    }
+
     render() {
         return <div className='ProductList'>
             <div onClick={() => {this.handleSortByNameAZ()}}>sortuj AZ</div>
             <div onClick={() => {this.handleSortByNameZA()}}>sortuj ZA</div>
+            <div onClick={() => {this.handleSortByPriceAsc()}}>sortuj cena rosnąco</div>
+            <div onClick={() => {this.handleSortByPriceDesc()}}>sortuj cena malejąco</div>
             {
                 this.props.items.map(product => {
                     return (
@@ -51,6 +61,12 @@ const mapDispatchToProps = (dispatch) => {
         },
         sortByNameZA: () => {
             dispatch(sortByNameZA())
+        },
+        sortByPriceAsc: () => {
+            dispatch(sortByPriceAsc())
+        },
+        sortByPriceDesc: () => {
+            dispatch(sortByPriceDesc())
         },
     }
 };
