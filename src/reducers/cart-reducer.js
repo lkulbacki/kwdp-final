@@ -20,11 +20,14 @@ const cartReducer = (state = initState, action) => {
             console.log(ADD_TO_CART);
             // REST API call simulation
             let addedItem = productList.products.find(item => item.id === action.id);
-            let existing_item = state.addedItems.find(item => action.id === item.id);
-            if (existing_item) {
-                addedItem.quantity += 1;
+            let existingItem = state.addedItems.find(item => item.id === action.id);
+            if (existingItem) {
                 return {
                     ...state,
+                    addedItems: [
+                        ...state.addedItems.filter(item => item.id !== action.id),
+                        Object.assign({}, addedItem, {quantity: existingItem.quantity + 1})
+                    ],
                     total: (parseFloat(state.total) + parseFloat(addedItem.price)).toFixed(2)
                 }
             } else {
@@ -49,9 +52,15 @@ const cartReducer = (state = initState, action) => {
         case INCREASE_QUANTITY:
             console.log(INCREASE_QUANTITY);
             let itemToIncrease = state.addedItems.find(item => action.id === item.id);
-            itemToIncrease.quantity += 1;
             let newTotalIncrease = parseFloat(state.total) + parseFloat(itemToIncrease.price);
-            return {...state, addedItems: [...state.addedItems], total: newTotalIncrease.toFixed(2)};
+            return {
+                ...state,
+                addedItems: [
+                    ...state.addedItems.filter(item => item.id !== action.id),
+                    Object.assign({}, itemToIncrease, {quantity: itemToIncrease.quantity + 1})
+                ],
+                total: newTotalIncrease.toFixed(2)
+            };
 
         case DECREASE_QUANTITY:
             console.log(DECREASE_QUANTITY);
@@ -61,9 +70,14 @@ const cartReducer = (state = initState, action) => {
                 let newTotal = state.total - parseFloat(itemToDecrease.price);
                 return {...state, addedItems: remainingItems, total: newTotal}
             } else if (itemToDecrease.quantity > 0) {
-                itemToDecrease.quantity -= 1;
                 let newTotalDecrease = parseFloat(state.total) - parseFloat(itemToDecrease.price);
-                return {...state, addedItems: [...state.addedItems], total: newTotalDecrease.toFixed(2)};
+                return {
+                    ...state,
+                    addedItems: [
+                        ...state.addedItems.filter(item => item.id !== action.id),
+                        Object.assign({}, itemToDecrease, {quantity: itemToDecrease.quantity - 1})],
+                    total: newTotalDecrease.toFixed(2)
+                };
             }
 
         default:
