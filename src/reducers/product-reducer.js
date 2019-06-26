@@ -1,10 +1,13 @@
 import {
+    FETCH_PRODUCTS,
     GET_PRODUCT_BY_SLUG,
     SET_PRODUCT_BY_SLUG,
     SORT_BY_NAME_AZ,
     SORT_BY_NAME_ZA,
-    SORT_BY_PRICE_ASC, SORT_BY_PRICE_DESC
+    SORT_BY_PRICE_ASC,
+    SORT_BY_PRICE_DESC
 } from "../actions/product-actions";
+
 import productList from '../products.json';
 
 function sortComparer(a, b) {
@@ -29,15 +32,17 @@ function sortPriceDesc(a, b) {
     const itemAPrice = parseFloat(a.price);
     const itemBPrice = parseFloat(b.price);
     return itemBPrice - itemAPrice;
-
 }
 
-let initState = {
-    items: productList.products
-};
+let initState = [];
 
 const productReducer = (state = initState, action) => {
         switch (action.type) {
+            case FETCH_PRODUCTS:
+                console.log(FETCH_PRODUCTS);
+                return {
+                    ...state, items: productList.products
+                };
             case GET_PRODUCT_BY_SLUG:
                 console.log(GET_PRODUCT_BY_SLUG);
                 return state.items.filter(product => product.slug === action.slug);
