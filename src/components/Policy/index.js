@@ -1,6 +1,6 @@
 import React from 'react';
 
-export class Regulamin extends React.Component {
+export class Policy extends React.Component {
     render() {
         return (
             <div>
