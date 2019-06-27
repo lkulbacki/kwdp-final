@@ -13,9 +13,12 @@ export function getProductBySlug(slug) {
     }
 }
 
-export function fetchProducts() {
+export function fetchProducts(page, perPage, sortType) {
     return {
-        type: FETCH_PRODUCTS
+        type: FETCH_PRODUCTS,
+        page,
+        perPage,
+        sortType
     }
 }
 

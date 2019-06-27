@@ -11,6 +11,7 @@ import {
     fetchProducts
 }
     from '../../../actions/product-actions'
+import Pagination from '../../Pagination';
 
 class ProductList extends React.Component {
     constructor(props) {
@@ -63,6 +64,7 @@ class ProductList extends React.Component {
                         );
                     })
                 }
+                <Pagination></Pagination>
             </div>
         } else {
             return null
@@ -75,15 +77,16 @@ class ProductList extends React.Component {
 const
     mapStateToProps = (state) => {
         return {
-            items: state.productReducer.items
+            items: state.productReducer.items,
+            pagination: state.productReducer.pagination
         }
     };
 
 const
     mapDispatchToProps = (dispatch) => {
         return {
-            fetchProducts: () => {
-                dispatch(fetchProducts())
+            fetchProducts: (page, perPage, sortType) => {
+                dispatch(fetchProducts(page, perPage, sortType))
             },
             addToCart: (id) => {
                 dispatch(addToCart(id))
