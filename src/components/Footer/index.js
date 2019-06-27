@@ -5,7 +5,7 @@ import './footer.scss';
 export class Footer extends React.Component {
     render() {
         return (
-            <div className="container-footer">
+            <footer className="container-footer">
                 <p className="rights">All rights reserved&reg;</p>
                 <ul className="nav">
                     <li className="nav-element"><NavLink exact to="/" activeClassName="active">Home</NavLink></li>
@@ -13,7 +13,7 @@ export class Footer extends React.Component {
                     <li className="nav-element"><NavLink exact to="/regulamin" activeClassName="active">Regulamin</NavLink></li>
                     <li className="nav-element"><NavLink exact to="/kontakt" activeClassName="active">Kontakt</NavLink></li>
                 </ul>
-            </div>
+            </footer>
         );
     }
 }

@@ -5,7 +5,7 @@ import './header.scss';
 export class Header extends React.Component {
     render() {
         return (
-            <div className="container-header">
+            <header className="container-header">
                 <p className="shop-name">Thrift Shop</p>
                 <ul className="nav">
                     <li className="nav-element"><NavLink exact to="/" activeClassName="active">Home</NavLink></li>
@@ -14,7 +14,7 @@ export class Header extends React.Component {
                     <li className="nav-element"><NavLink exact to="/kontakt" activeClassName="active">Kontakt</NavLink></li>
                     <li className="nav-element"><NavLink exact to="/basket" activeClassName="active">Koszyk</NavLink></li>
                 </ul>
-            </div>
+            </header>
         );
     }
 }
