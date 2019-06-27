@@ -1,9 +1,15 @@
+.container-header {
+  display: flex;
+  padding: 30px;
+}
+
 .shop-name {
-  color: red;
+  color: #242424;
+  font-size: 24px;
 }
 
 a, a:visited {
-  color: black;
+  color: #242424;
 }
 
 .active {

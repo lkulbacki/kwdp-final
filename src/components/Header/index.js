@@ -5,7 +5,7 @@ import './header.scss';
 export class Header extends React.Component {
     render() {
         return (
-            <div>
+            <div className="container-header">
                 <p className="shop-name">NAZWA SKLEPU</p>
                 <ul className="nav">
                     <li><NavLink exact to="/" activeClassName="active">Home</NavLink></li>
