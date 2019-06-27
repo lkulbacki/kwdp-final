@@ -1,6 +1,10 @@
 .mainContainer {
   background-color: #FFFFFF;
   border: 1px solid red;
+  display: grid;
+  min-height: 100%;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 100%;
 }
 
 
