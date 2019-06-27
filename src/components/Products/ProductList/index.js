@@ -12,6 +12,7 @@ import {
 }
     from '../../../actions/product-actions'
 import Pagination from '../../Pagination';
+import Button from "reactstrap/es/Button";
 
 class ProductList extends React.Component {
     constructor(props) {
@@ -40,32 +41,36 @@ class ProductList extends React.Component {
 
     render() {
         if (typeof this.props.items !== 'undefined' && this.props.items.length > 0) {
-            return <div className='ProductList'>
-                <div onClick={() => {
-                    this.handleSortByNameAZ()
-                }}>sortuj AZ
-                </div>
-                <div onClick={() => {
-                    this.handleSortByNameZA()
-                }}>sortuj ZA
-                </div>
-                <div onClick={() => {
-                    this.handleSortByPriceAsc()
-                }}>sortuj cena rosnąco
-                </div>
-                <div onClick={() => {
-                    this.handleSortByPriceDesc()
-                }}>sortuj cena malejąco
-                </div>
-                {
-                    this.props.items.map(product => {
-                        return (
-                            <ProductBox key={product.id} product={product} addToCart={this.props.addToCart}/>
-                        );
-                    })
-                }
-                <Pagination></Pagination>
-            </div>
+            return <article className='ProductList'>
+                <aside className="container-sorting">
+                    <Button onClick={() => {
+                        this.handleSortByNameAZ()
+                    }}>sortuj A-Z
+                    </Button>
+                    <Button onClick={() => {
+                        this.handleSortByNameZA()
+                    }}>sortuj Z-A
+                    </Button>
+                    <Button onClick={() => {
+                        this.handleSortByPriceAsc()
+                    }}>sortuj cena rosnąco
+                    </Button>
+                    <Button onClick={() => {
+                        this.handleSortByPriceDesc()
+                    }}>sortuj cena malejąco
+                    </Button>
+                </aside>
+                <section className="product-presentation">
+                    {
+                        this.props.items.map(product => {
+                            return (
+                                <ProductBox key={product.id} product={product} addToCart={this.props.addToCart}/>
+                            );
+                        })
+                    }
+                    <Pagination></Pagination>
+                </section>
+            </article>
         } else {
             return null
         }

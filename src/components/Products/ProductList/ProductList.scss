@@ -1,3 +1,29 @@
+$color-marine-blue: #1e3f5a;
+$color-dark-grey: #242424;
+$color-crema: #ffffdd;
+
 .ProductList {
-  background-color: chocolate;
+  border: 1px solid $color-marine-blue;
+  display: inline-flex;
 }
+
+.btn {
+  cursor: pointer;
+  width: 140px;
+  font-size: 14px;
+  line-height: 20px;
+  border: 1px solid $color-dark-grey;
+  color: $color-dark-grey;
+  background-color: $color-crema;
+  &:hover {
+    background-color: $color-marine-blue;
+    color: $color-crema;
+  }
+  margin-bottom: 5px;
+}
+
+.container-sorting {
+  padding: 10px;
+}
+
+
