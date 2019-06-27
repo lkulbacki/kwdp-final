@@ -13,7 +13,7 @@ class ProductBox extends React.Component {
         return (
             <div>
                 <Link to={/products/ + product.slug}><h1 className='Product'>{product.name}</h1></Link>
-                <p className='ProductPrice'>{product.price}</p>
+                <p className='ProductPrice'>{product.price}<span> {product.special}</span></p>
                 <p className='desc'>{product.desc}</p>
                 <img className='imageBox' src={product.picture} alt={product.name}/>
                 <div className='btn' onClick={() => {
