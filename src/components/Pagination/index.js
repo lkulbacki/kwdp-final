@@ -6,7 +6,6 @@ import {fetchProducts} from '../../actions/product-actions'
 class Pagination extends React.Component {
     constructor(props) {
         super(props);
-        // console.log(this.props);
     }
 
     handleChangePage(page) {
@@ -15,16 +14,13 @@ class Pagination extends React.Component {
 
     render() {
         let pagination = this.props.pagination;
-        let pagesArr=[];
-        for (var i = 0; i < this.props.pagination.maxPages; i++){
-            pagesArr.push(i+1);
+        let pagesArr = [];
+        for (var i = 0; i < this.props.pagination.maxPages; i++) {
+            pagesArr.push(i + 1);
         }
-        console.log(pagesArr);
-        console.log(pagination.page);
-        console.log(pagination.maxPages);
 
         return <ul className='pagination'>
-            { pagesArr.map((page, index) =>
+            {pagesArr.map((page, index) =>
                 <li key={index} className={pagination.page === page ? 'active' : ''}>
                     <a onClick={() => this.handleChangePage(page)}>{page}</a>
                 </li>
