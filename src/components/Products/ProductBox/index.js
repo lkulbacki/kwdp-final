@@ -11,7 +11,7 @@ class ProductBox extends React.Component {
     render() {
         const product = this.props.product;
         return (
-            <div>
+            <div className="product-box">
                 <Link to={/products/ + product.slug}><h1 className='Product'>{product.name}</h1></Link>
                 <p className='ProductPrice'>{product.price}<span> {product.special}</span></p>
                 <p className='desc'>{product.desc}</p>

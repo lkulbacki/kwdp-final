@@ -21,12 +21,12 @@ class Pagination extends React.Component {
 
         return <ul className='pagination'>
             {pagesArr.map((page, index) =>
-                <li key={index} className={pagination.page === page ? 'active' : ''}>
+                <li key={index} className={pagination.page === page ? 'active page-item' : 'page-item'}>
                     <a onClick={() => this.handleChangePage(page)}>{page}</a>
                 </li>
             )}
 
-            <li className={pagination.page === pagination.maxPages ? 'disabled' : ''}>
+            <li className={pagination.page === pagination.maxPages ? 'disabled page-item' : 'page-item'}>
                 <a onClick={() => this.handleChangePage(pagination.page + 1)}>--></a>
             </li>
         </ul>

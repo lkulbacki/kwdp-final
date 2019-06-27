@@ -1,3 +1,22 @@
+$color-marine-blue: #1e3f5a;
+$color-dark-grey: #242424;
+$color-crema: #ffffdd;
+
+
 .disabled {
   display: none;
+}
+
+.page-item {
+  display: inline-block;
+  width: 20px;
+  heigth: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+
+  &:hover {
+    background-color: $color-marine-blue;
+    color: $color-crema;
+  }
 }
