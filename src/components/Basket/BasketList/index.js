@@ -2,13 +2,15 @@ import React from 'react';
 import {connect} from 'react-redux';
 import BasketItem from '../BasketItem';
 import {removeFromCart, increaseQuantity, decreaseQuantity} from "../../../actions/cart-actions";
+import './BasketList.scss';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const BasketList = props => (
 
-    <div className='ProductList'>
+    <div className='basket-list'>
         {
             props.addedItems.map(product => {
-                console.log(props.addedItems);
                 return (
                     <BasketItem key={product.id} product={product} removeFromCart={props.removeFromCart}
                                 increaseQuantity={props.increaseQuantity} decreaseQuantity={props.decreaseQuantity}/>

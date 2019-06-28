@@ -18,7 +18,6 @@ class BasketItem extends React.Component {
 
     render() {
         const product = this.props.product;
-        console.log(this.props);
         return (
             <div>
                 <Link to={/products/ + product.slug}><h1 className='Product'>{product.name}</h1></Link>
