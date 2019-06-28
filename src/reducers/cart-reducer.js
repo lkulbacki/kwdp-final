@@ -78,6 +78,10 @@ const cartReducer = (state = initState, action) => {
                         Object.assign({}, itemToDecrease, {quantity: itemToDecrease.quantity - 1})],
                     total: newTotalDecrease.toFixed(2)
                 };
+            } else {
+                return state;
+            }
+
             }
 
         default:

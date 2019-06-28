@@ -33,12 +33,6 @@ class ProductPage extends React.Component {
     notify = () => toast("Product added!");
 
 
-    // // SAME AS ABOVE, not-arrow syntax
-    // getProduct(productArray, slug) {
-    //     return productArray.products.find(function (product) {
-    //         return product.slug === slug;
-    //     });
-    // }
     render() {
         const product = this.product;
         return (

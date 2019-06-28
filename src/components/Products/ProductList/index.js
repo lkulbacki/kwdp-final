@@ -80,41 +80,34 @@ class ProductList extends React.Component {
     }
 }
 
-const
-    mapStateToProps = (state) => {
-        return {
-            items: state.productReducer.items,
-            pagination: state.productReducer.pagination
-        }
-    };
+const mapStateToProps = (state) => {
+    return {
+        items: state.productReducer.items,
+        pagination: state.productReducer.pagination
+    }
+};
 
-const
-    mapDispatchToProps = (dispatch) => {
-        return {
-            fetchProducts: (page, perPage, sortType) => {
-                dispatch(fetchProducts(page, perPage, sortType))
-            },
-            addToCart: (id) => {
-                dispatch(addToCart(id))
-            },
-            sortByNameAZ: () => {
-                dispatch(sortByNameAZ())
-            },
-            sortByNameZA: () => {
-                dispatch(sortByNameZA())
-            },
-            sortByPriceAsc: () => {
-                dispatch(sortByPriceAsc())
-            },
-            sortByPriceDesc: () => {
-                dispatch(sortByPriceDesc())
-            },
-        }
-    };
+const mapDispatchToProps = (dispatch) => {
+    return {
+        fetchProducts: (page, perPage, sortType) => {
+            dispatch(fetchProducts(page, perPage, sortType))
+        },
+        addToCart: (id) => {
+            dispatch(addToCart(id))
+        },
+        sortByNameAZ: () => {
+            dispatch(sortByNameAZ())
+        },
+        sortByNameZA: () => {
+            dispatch(sortByNameZA())
+        },
+        sortByPriceAsc: () => {
+            dispatch(sortByPriceAsc())
+        },
+        sortByPriceDesc: () => {
+            dispatch(sortByPriceDesc())
+        },
+    }
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)
-
-(
-    ProductList
-)
-;
+export default connect(mapStateToProps, mapDispatchToProps)(ProductList);

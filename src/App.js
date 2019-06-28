@@ -8,7 +8,7 @@ import {Contact} from "./components/Contact";
 import {Faq} from './Faq';
 import {NoMatch} from './components/NoMatch';
 import ProductPage from './components/Products/ProductPage';
-import BasketPage from "./components/Basket/BasketPage";
+import CartPage from "./components/Cart/CartPage";
 import {Provider} from 'react-redux';
 import {createStore} from 'redux';
 import reducers from './reducers';
@@ -27,7 +27,7 @@ class App extends React.Component {
                             <Route exact path={"/regulamin"} component={Policy}/>
                             <Route exact path={"/kontakt"} component={Contact}/>
                             <Route path="/products/:slug" component={ProductPage}/>
-                            <Route path="/basket" component={BasketPage}/>
+                            <Route path="/basket" component={CartPage}/>
                             <Route component={NoMatch}/>
                         </Switch>
                     </MainLayout>
