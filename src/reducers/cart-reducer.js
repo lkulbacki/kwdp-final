@@ -1,4 +1,10 @@
-import {ADD_TO_CART, DECREASE_QUANTITY, INCREASE_QUANTITY, REMOVE_FROM_CART,} from "../actions/cart-actions";
+import {
+    ADD_TO_CART,
+    APPLY_CODE,
+    DECREASE_QUANTITY,
+    INCREASE_QUANTITY,
+    REMOVE_FROM_CART,
+} from "../actions/cart-actions";
 
 // DEV
 import productList from '../products.json';
@@ -82,6 +88,13 @@ const cartReducer = (state = initState, action) => {
                 return state;
             }
 
+        case APPLY_CODE:
+            console.log(APPLY_CODE);
+            if (action.code.promoCode === "SAVE" ) {
+                const newTotalPrice = state.total * 0.85;
+                return {...state, total: (newTotalPrice).toFixed(2)};
+            } else {
+                return state
             }
 
         default:
