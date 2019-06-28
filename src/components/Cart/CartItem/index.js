@@ -1,8 +1,8 @@
 import React from 'react';
-import './BasketItem.scss';
+import './CartItem.scss';
 import {Link} from "react-router-dom";
 
-class BasketItem extends React.Component {
+class CartItem extends React.Component {
 
     handleDeleteItem = (id) => {
         this.props.removeFromCart(id);
@@ -34,4 +34,4 @@ class BasketItem extends React.Component {
     }
 }
 
-export default BasketItem;
+export default CartItem;

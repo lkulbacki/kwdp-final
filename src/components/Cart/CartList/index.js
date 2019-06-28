@@ -1,16 +1,16 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import BasketItem from '../BasketItem';
+import CartItem from '../CartItem';
 import {removeFromCart, increaseQuantity, decreaseQuantity} from "../../../actions/cart-actions";
-import './BasketList.scss';
+import './CartList.scss';
 
-const BasketList = props => (
+const CartList = props => (
 
     <div className='basket-list'>
         {
             props.addedItems.map(product => {
                 return (
-                    <BasketItem key={product.id} product={product} removeFromCart={props.removeFromCart}
+                    <CartItem key={product.id} product={product} removeFromCart={props.removeFromCart}
                                 increaseQuantity={props.increaseQuantity} decreaseQuantity={props.decreaseQuantity}/>
                 );
             })
@@ -39,4 +39,4 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(BasketList);
+export default connect(mapStateToProps, mapDispatchToProps)(CartList);
