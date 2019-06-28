@@ -71,6 +71,7 @@ class ProductList extends React.Component {
                     <Pagination></Pagination>
                 </section>
             </article>
+
         } else {
             return null
         }

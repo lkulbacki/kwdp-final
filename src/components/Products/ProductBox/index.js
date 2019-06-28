@@ -1,12 +1,17 @@
 import React from 'react';
 import './ProductBox.scss';
 import {Link} from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 class ProductBox extends React.Component {
 
     handleAddToCart = (id) => {
         this.props.addToCart(id);
+        this.notify();
     };
+
+    notify = () => toast("Added to cart!");
 
     render() {
         const product = this.props.product;
@@ -20,6 +25,7 @@ class ProductBox extends React.Component {
                     this.handleAddToCart(product.id)
                 }}>Do koszyka
                 </div>
+                <ToastContainer/>
             </div>
         )
     }

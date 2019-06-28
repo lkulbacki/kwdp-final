@@ -6,6 +6,9 @@ import ProductData from '../../../products.json';
 import {setProductBySlug} from "../../../actions/product-actions";
 import Button from "reactstrap/es/Button";
 import {addToCart} from "../../../actions/cart-actions";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 class ProductPage extends React.Component {
     constructor(props) {
@@ -24,7 +27,11 @@ class ProductPage extends React.Component {
 
     handleAddToCart(id) {
         this.props.addToCart(id)
+        this.notify()
     }
+
+    notify = () => toast("Product added!");
+
 
     // // SAME AS ABOVE, not-arrow syntax
     // getProduct(productArray, slug) {
@@ -41,6 +48,7 @@ class ProductPage extends React.Component {
                 <p className='desc'>{product.desc}</p>
                 <img className='imageBox' src={product.picture} alt={product.name}/>
                 <Button onClick={() => this.handleAddToCart(product.id)}>Do koszyka</Button>
+                <ToastContainer/>
             </div>
         )
     }

@@ -3,8 +3,6 @@ import {connect} from 'react-redux';
 import BasketItem from '../BasketItem';
 import {removeFromCart, increaseQuantity, decreaseQuantity} from "../../../actions/cart-actions";
 import './BasketList.scss';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
 const BasketList = props => (
 
