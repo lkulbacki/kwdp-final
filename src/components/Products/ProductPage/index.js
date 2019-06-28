@@ -4,6 +4,8 @@ import {connect} from 'react-redux';
 
 import ProductData from '../../../products.json';
 import {setProductBySlug} from "../../../actions/product-actions";
+import Button from "reactstrap/es/Button";
+import {addToCart} from "../../../actions/cart-actions";
 
 class ProductPage extends React.Component {
     constructor(props) {
@@ -20,6 +22,10 @@ class ProductPage extends React.Component {
         return productArray.products.find(product => product.slug === slug);
     }
 
+    handleAddToCart(id) {
+        this.props.addToCart(id)
+    }
+
     // // SAME AS ABOVE, not-arrow syntax
     // getProduct(productArray, slug) {
     //     return productArray.products.find(function (product) {
@@ -34,6 +40,7 @@ class ProductPage extends React.Component {
                 <p className='ProductPrice'>{product.price}</p>
                 <p className='desc'>{product.desc}</p>
                 <img className='imageBox' src={product.picture} alt={product.name}/>
+                <Button onClick={() => this.handleAddToCart(product.id)}>Do koszyka</Button>
             </div>
         )
     }
@@ -43,6 +50,9 @@ const mapDispatchToProps = (dispatch) => {
     return {
         setProductBySlug: (slug) => {
             dispatch(setProductBySlug(slug))
+        },
+        addToCart: (id) => {
+            dispatch(addToCart(id))
         }
     }
 };
